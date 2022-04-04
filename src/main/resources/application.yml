@@ -1,0 +1,34 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+
+  output:
+    ansi:
+      enabled: ALWAYS
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:create-drop}
+      show-sql: true
+  datasource:
+      url: ${MARIADB_URL:jdbc:mariadb://j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/agmdc7cebjg43l1x}
+      username: ${MARIADB_USER:camu4qvva5m4a0jt}
+      password: ${MARIADB_PASSWORD:iaacb0umi8p6nadf}
+jwt:
+  token:
+    validity: 18000
+    prefix: Bearer
+  signing:
+    key: signingkey
+  authorities:
+    key: roles
+  header:
+    string: Authorization
+mailing:
+  sendgrid:
+    api-key: ${SENDGRID_API_KEY}
+    enabled: true
+

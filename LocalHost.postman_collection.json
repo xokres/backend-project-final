@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "0d13fad8-6f80-4c9d-8b2d-099db7265116",
+		"name": "LocalHost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Flights",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"user1@email.com\",\n\"password\": \"user1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights by Destination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"user1@email.com\",\n\"password\": \"user1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/destination/{destination}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"destination",
+						"{destination}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights by Origin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"user1@email.com\",\n\"password\": \"user1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/origin/{origin}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"origin",
+						"{origin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"jonh@email\",\n    \"password\": \"pass1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"luis\",\n\"email\" : \"luis.faria@mindswap.academy\",\n\"age\": 50,\n\"password\": \"abacate\",\n\"identificationNumber\" : 1009846098\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/user/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookFlight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"passengerId\": 14,\n    \"flightNumber\" : \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/bookflight/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"bookflight",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelFlight",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvcy5tYWlzLmJvbml0b3MuZGEubWluZHN3YXBAZ21haWwuY29tIiwicm9sZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE2NDkwMDk0NjIsImV4cCI6MTY0OTAyNzQ2Mn0.3TQuf57sPjOewtbtaRGNTL0Tven4oUNie3bFtvJfnW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"passengerId\": 14,\n    \"flightNumber\" : \"FR-001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/bookflight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"bookflight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editFlight(ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25oQGVtYWlsIiwicm9sZXMiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImlhdCI6MTY0OTA2MjE2NywiZXhwIjoxNjQ5MDgwMTY3fQ.uVrjo2tr5wm5DKx22yZKzEOeGiSgPtVtCS0NDTmvLJI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"flightNumber\": \"FR-015\",\n        \"departureDate\": \"2022-09-01\",\n        \"arrivalDate\": \"2022-09-01\",\n        \"departureTime\": \"17:00\",\n        \"arrivalTime\": \"19:01\",\n        \"departureAirport\": \"OPO\",\n        \"arrivalAirport\": \"MAD\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/updateflight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"updateflight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlight(ADMIN)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25oQGVtYWlsIiwicm9sZXMiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImlhdCI6MTY0OTA2MjE2NywiZXhwIjoxNjQ5MDgwMTY3fQ.uVrjo2tr5wm5DKx22yZKzEOeGiSgPtVtCS0NDTmvLJI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"flightNumber\": \"FR-017\",\n        \"departureDate\": \"2022-09-01\",\n        \"arrivalDate\": \"2022-09-01\",\n        \"departureTime\": \"17:00\",\n        \"arrivalTime\": \"19:01\",\n        \"departureAirport\": \"OPO\",\n        \"arrivalAirport\": \"MAD\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/addflight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"addflight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "passengersPerFlight(ADMIN)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25oQGVtYWlsIiwicm9sZXMiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImlhdCI6MTY0OTA2MjE2NywiZXhwIjoxNjQ5MDgwMTY3fQ.uVrjo2tr5wm5DKx22yZKzEOeGiSgPtVtCS0NDTmvLJI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"flightNumber\": \"FR-017\",\n        \"departureDate\": \"2022-09-01\",\n        \"arrivalDate\": \"2022-09-01\",\n        \"departureTime\": \"17:00\",\n        \"arrivalTime\": \"19:01\",\n        \"departureAirport\": \"OPO\",\n        \"arrivalAirport\": \"MAD\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/flights/passengers-per-flight/FR-001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"passengers-per-flight",
+						"FR-001"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzLmZhcmlhQG1pbmRzd2FwLmFjYWRlbXkiLCJyb2xlcyI6IlJPTEVfdXNlciIsImlhdCI6MTY0ODgzNjc3MCwiZXhwIjoxNjQ4ODU0NzcwfQ.2ZztXrvLbD3Cc_AwVs2TMPHQkAdhMyu7msHbgCFdHAU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
