@@ -9,4 +9,5 @@ import lombok.RequiredArgsConstructor;
 public class AuthToken {
     private String token;
 
+
 }
